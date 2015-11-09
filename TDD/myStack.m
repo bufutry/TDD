@@ -8,13 +8,25 @@
 
 #import "myStack.h"
 
+@interface myStack()
+@property (nonatomic ,strong) NSMutableArray *stack;
+@end
+
 @implementation myStack
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _stack = [NSMutableArray array];
+    }
+    return self;
+}
 - (void)push:(double)objc
 {
-
+    [_stack addObject:@(objc)];
 }
 - (double)top
 {
-    return 2.3;
+    return [_stack[0] doubleValue];
 }
 @end
